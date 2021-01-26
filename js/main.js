@@ -69,7 +69,12 @@
 // });
 
 //using a timeline
-const timeline = gsap.timeline({ paused: true });
+const timeline = gsap.timeline({
+  paused: true,
+  onStart: () => console.log("started"),
+  onUpdate: () => console.log("updating"),
+  onComplete: () => console.log("completed"),
+});
 
 timeline
   .from("body", {
